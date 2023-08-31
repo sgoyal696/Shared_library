@@ -1,8 +1,8 @@
-def call(string Project, string ImageTag, string HubUser){
-
+def call(String project, String ImageTag, String hubUser){
+    
     sh """
-    docker image build -t ${HubUser}/${Project} .
-    docker image tag ${HubUser}/${Project} ${HubUser}/${Project}: ${ImageTag}  
-     docker image tag ${HubUser}/${Project}: latest
+     docker image build -t ${hubUser}/${project} . 
+     docker image tag ${hubUser}/${project} ${hubUser}/${project}:${ImageTag}
+     docker image tag ${hubUser}/${project} ${hubUser}/${project}:latest
     """
 }
